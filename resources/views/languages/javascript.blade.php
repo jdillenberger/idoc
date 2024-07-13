@@ -25,7 +25,11 @@ let headers = {
 
 let body = JSON.stringify({
 @foreach($route['bodyParameters'] as $attribute => $parameter)
-    "{{ $attribute }}": @if (in_array($parameter['type'], ['json', 'object'])){!! $parameter['value'] !!}@else"{{ $parameter['value'] }}"@endif,
+@if (in_array($parameter['type'], ['json', 'object', 'array']))
+    "{{ $attribute }}": {{ json_encode($parameter['value']) }},
+@else
+    "{{ $attribute }}": "{{ $parameter['value'] }}",
+@endif
 @endforeach
 })
 @endif
