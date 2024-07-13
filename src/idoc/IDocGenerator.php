@@ -353,6 +353,10 @@ class IDocGenerator
             return $casts[$type]($value);
         }
 
+        if ($type == 'array' || $type == 'object') {
+            return json_decode($value, true);
+        }
+
         return $value;
     }
 }
