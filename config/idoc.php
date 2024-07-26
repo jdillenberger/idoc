@@ -228,6 +228,11 @@ return [
     'routes' => [
         [
             /*
+             * Specify if groups and routes should be sorted.
+             */
+            'sort' => true
+    
+            /*
              * Specify conditions to determine what routes will be parsed in this group.
              * A route must fulfill ALL conditions to pass.
              */
