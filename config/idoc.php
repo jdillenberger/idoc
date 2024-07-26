@@ -230,7 +230,7 @@ return [
             /*
              * Specify if groups and routes should be sorted.
              */
-            'sort' => true
+            'sort' => true,
     
             /*
              * Specify conditions to determine what routes will be parsed in this group.
