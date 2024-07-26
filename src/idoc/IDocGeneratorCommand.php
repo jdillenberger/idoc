@@ -59,7 +59,8 @@ class IDocGeneratorCommand extends Command
 
         $parsedRoutes = $this->processRoutes($generator, $routes);
 
-        $parsedRoutes = collect($parsedRoutes)->groupBy('group');
+        $sortedRoutes = collect($parsedRoutes)->sortBy('title')->sortBy('group');
+        $parsedRoutes = $sortedRoutes->groupBy('group');
 
         $this->writeMarkdown($parsedRoutes);
     }
