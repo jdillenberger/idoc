@@ -59,7 +59,7 @@ class IDocGeneratorCommand extends Command
 
         $parsedRoutes = $this->processRoutes($generator, $routes);
 
-        if (config('idoc.routes.sort', false)) {
+        if (config('idoc.sort_routes', false)) {
             $parsedRoutes = collect($parsedRoutes)->sortBy('title')->sortBy('group');
         }
         

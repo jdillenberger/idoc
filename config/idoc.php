@@ -215,6 +215,11 @@ return [
     ],
 
     /*
+    * Specify if groups and routes should be sorted.
+    */
+    'sort_routes' => false,
+
+    /*
     |--------------------------------------------------------------------------
     | iDoc routes: The routes for which documentation should be generated.
     |--------------------------------------------------------------------------
@@ -224,14 +229,8 @@ return [
     | should be applied to them ('apply' section).
     |
      */
-
     'routes' => [
         [
-            /*
-             * Specify if groups and routes should be sorted.
-             */
-            'sort' => true,
-    
             /*
              * Specify conditions to determine what routes will be parsed in this group.
              * A route must fulfill ALL conditions to pass.
